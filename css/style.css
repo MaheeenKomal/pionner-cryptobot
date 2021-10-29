@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ====================================== Common CSS ===================================================== */
+
+.container {
+    max-width: 1030px;
+    margin: 0 auto;
+}
+
+a:hover {
+    /* color: #1a6ebf; */
+    text-decoration: initial;
+}
+
+p {
+    margin-bottom: initial;
+}
+
+button:focus {
+    outline: initial;
+    cursor: pointer;
+}
+
+.btn.focus,
+.btn:focus {
+    outline: initial;
+    box-shadow: initial;
+}
+
+:focus-visible {
+    outline: initial;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: initial;
+}
+
+label {
+    margin-bottom: initial;
+}
+
+
+/* ====================================== cryptobot CSS ===================================================== */
+
+.custom-select {
+    position: relative;
+    height: initial;
+    padding: initial;
+    line-height: initial;
+    background: initial;
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.02), 6px 6px 12px rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    border: initial;
+    width: 100%;
+    max-width: 484px;
+}
+
+.custom-select select {
+    display: none;
+    /*hide original SELECT element:*/
+}
+
+.select-selected {
+    background-color: #171717 !important;
+}
+
+
+/*style the arrow inside the select element:*/
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+}
+
+
+/*point the arrow upwards when the select box is open (active):*/
+
+.select-selected.select-arrow-active:after {
+    top: 12px;
+    font-family: 'FontAwesome';
+    right: 26px;
+    content: "\f00d";
+    font-size: 15px;
+    color: rgb(255 255 255 / 88%);
+}
+
+
+/*style the items (options), including the selected item:*/
+
+.cryptobot .select-items div,
+.select-selected {
+    padding: 17px 16px;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    height: 64px;
+    max-width: 484px;
+    border-radius: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    color: rgba(255, 255, 255, 0.6);
+    background: #232323;
+}
+
+
+/*style items (options):*/
+
+.select-items {
+    position: relative;
+    top: 9px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: #232323;
+    /* Base */
+    border: 3px solid #171717;
+    box-sizing: border-box;
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 12px rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    width: 100%;
+}
+
+
+/*hide the items when the select box is closed:*/
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.select-items div {
+    padding: 8px 21px;
+    height: 39px;
+}
+
+
+/* crypto-bot */
+
+.cryptobot {
+    background-image: url(../images/Crypto\ BG\ 1.png);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 36px 55px;
+    overflow: auto;
+}
+
+.cryptobot__title {
+    font-family: Balsamiq Sans;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 42px;
+    background: linear-gradient( to top, #f3b53d, #ed6c37);
+    background: -webkit-linear-gradient( top, #f3b53d, #ed6c37);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+.cryptobot__content {
+    width: 100%;
+    max-width: 485px;
+    margin: auto;
+}
+
+.crypto__headline {
+    font-family: Balsamiq Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 0.88);
+    padding: 25px 0px 8px;
+}
+
+.botbtn {
+    font-weight: 700;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #171717;
+    background: linear-gradient( 0deg, #f3b53d, #ed6c37);
+    background: -webkit-linear-gradient( 0deg, #f3b53d, #ed6c37);
+    text-align: center;
+    margin: 32px auto 20px;
+    padding: 18px 20px;
+    max-width: 200px;
+}
+
+
+/* search */
+
+.botbtn--stop {
+    color: #FCFCFC;
+    background: transparent;
+    max-width: 282px;
+    position: relative;
+    margin: initial;
+}
+
+.botbtn--stop::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+    background: linear-gradient( 360deg, #f3b53d, #ed6c37);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    background: -webkit-linear-gradient( 360deg, #f3b53d, #ed6c37);
+    -webkit-mask-composite: source-out;
+    mask-composite: exclude;
+}
+
+.searchbot__img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.searchbot__data {
+    height: 362px;
+    width: 100%;
+    max-width: 420px;
+    background: #171717;
+    border-radius: 16px;
+    padding: 16px 12px 0px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.searchbot__h3 {
+    max-width: 396px;
+    height: 40px;
+    /* Body Small */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+    /* White-Medium */
+    color: rgba(255, 255, 255, 0.88);
+    width: 100%;
+    padding: 0px 0px 53px;
+}
+
+.searchbot {
+    background-image: url(../images/Crypto\ BG\ 1.png);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 33px 68px;
+    overflow: auto;
+}
+
+.searchbot__bind {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.datasearch {
+    width: 100%;
+}
+
+.botbtn--search {
+    margin: 32px 0px 24px;
+}
+
+.searchbot .custom-select {
+    max-width: 339px;
+}
+
+.datasearch__section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 420px;
+    padding: 19px 0px 0px;
+}
+
+.datasearch__section {
+    max-width: 339px;
+}
+
+
+/* result */
+
+.resultbot {
+    background-image: url(../images/Crypto\ BG\ 1.png);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 33px 68px;
+    overflow: auto;
+}
+
+.resultbot .crypto__headline {
+    text-align: center;
+    padding: 72px 0px 36px;
+}
+
+.resultbot__link {
+    max-width: 648px;
+    top: 214px;
+    /* Base */
+    background: #171717;
+    border-radius: 16px;
+    width: 100%;
+    padding: 8px 8px 8px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.resultbot .cryptobot__content {
+    max-width: 648px;
+    text-align: center;
+}
+
+.resultbot .botbtn--search {
+    margin: 0;
+    width: 100%;
+    max-width: 124px;
+    padding: 12px 10px;
+    border-radius: 16px;
+}
+
+.resultbot__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: break-spaces;
+}
+
+.resultbot .botbtn--stop {
+    margin: 64px 0px;
+    padding: 18px 20px;
+}
+
+.resultbot .arrow {
+    height: 24px;
+    width: 24px;
+    margin-top: -3px;
+    object-fit: contain;
+    margin-left: 13px;
+}
+
+
+/* ====================================== Media-Queries ===================================================== */
+
+@media(max-width: 992px) {
+    /* search css */
+    .searchbot__bind {
+        flex-direction: column-reverse;
+    }
+    .datasearch__section {
+        max-width: 420px;
+    }
+    .searchbot {
+        padding: 33px 35px;
+    }
+    .searchbot__data {
+        margin: 0px auto 15px;
+    }
+    /* resultbot */
+    .resultbot {
+        padding: 33px 15px;
+    }
+}
+
+@media(max-width: 768px) {
+    /* result css */
+    .resultbot__link {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .resultbot__text {
+        padding: 0px 0px 12px;
+    }
+}
+
+@media(max-width: 576px) {
+    .cryptobot {
+        padding: 36px 15px;
+    }
+    .cryptobot__title {
+        font-size: 36px;
+        padding: 0px 0px 14px;
+    }
+    .crypto__headline {
+        font-size: 22px;
+    }
+    .cryptobot .select-items div,
+    .select-selected {
+        padding: 18px 16px;
+    }
+    .botbtn {
+        padding: 16px 20px;
+    }
+    /* searchcss */
+    .searchbot {
+        padding: 33px 15px;
+    }
+    .searchbot__h3 {
+        font-size: 12px;
+    }
+    .botbtn {
+        max-width: 165px;
+    }
+    .botbtn--stop {
+        max-width: 223px;
+    }
+    .searchbot__img {
+        height: 180px;
+        width: 180px;
+        object-fit: contain;
+    }
+    /* result css */
+    .resultbot__link {
+        padding: 14px 20px 10px;
+    }
+    .botbtn {
+        font-size: 15px;
+    }
+    .resultbot .arrow {
+        margin-left: 3px;
+    }
+    .resultbot .botbtn--stop {
+        padding: 18px 6px;
+    }
+}
