@@ -60,109 +60,8 @@ label {
     margin-bottom: initial;
 }
 
-
-/* ====================================== cryptobot CSS ===================================================== */
-
-.custom-select {
-    position: relative;
-    height: initial;
-    padding: initial;
-    line-height: initial;
-    background: initial;
-    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.02), 6px 6px 12px rgba(0, 0, 0, 0.16);
-    border-radius: 16px;
-    border: initial;
-    width: 100%;
-    max-width: 484px;
-}
-
-.custom-select select {
-    display: none;
-    /*hide original SELECT element:*/
-}
-
-.select-selected {
-    background-color: #171717 !important;
-}
-
-
-/*style the arrow inside the select element:*/
-
-.select-selected:after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-}
-
-
-/*point the arrow upwards when the select box is open (active):*/
-
-.select-selected.select-arrow-active:after {
-    top: 12px;
-    font-family: 'FontAwesome';
-    right: 26px;
-    content: "\f00d";
-    font-size: 15px;
-    color: rgb(255 255 255 / 88%);
-}
-
-
-/*style the items (options), including the selected item:*/
-
-.cryptobot .select-items div,
-.select-selected {
-    padding: 17px 16px;
-    cursor: pointer;
-    user-select: none;
-    width: 100%;
-    height: 64px;
-    max-width: 484px;
-    border-radius: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    /* identical to box height, or 150% */
-    color: rgba(255, 255, 255, 0.6);
-    background: #232323;
-}
-
-
-/*style items (options):*/
-
-.select-items {
-    position: relative;
-    top: 9px;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    background: #232323;
-    /* Base */
-    border: 3px solid #171717;
-    box-sizing: border-box;
-    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 12px rgba(0, 0, 0, 0.16);
-    border-radius: 16px;
-    width: 100%;
-}
-
-
-/*hide the items when the select box is closed:*/
-
-.select-hide {
-    display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.select-items div {
-    padding: 8px 21px;
-    height: 39px;
+a {
+    text-decoration: none;
 }
 
 
@@ -203,6 +102,7 @@ label {
     line-height: 36px;
     color: rgba(255, 255, 255, 0.88);
     padding: 25px 0px 8px;
+    text-transform: capitalize;
 }
 
 .botbtn {
@@ -220,9 +120,6 @@ label {
     padding: 18px 20px;
     max-width: 200px;
 }
-
-
-/* search */
 
 .botbtn--stop {
     color: #FCFCFC;
@@ -248,6 +145,78 @@ label {
     mask-composite: exclude;
 }
 
+
+/* select CSS */
+
+.cryptobot__select {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 173px;
+    text-overflow: ellipsis;
+}
+
+.cryptobot .select-items h3:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.cryptobot__select:after {
+    top: 17px;
+    font-family: 'FontAwesome';
+    right: 26px;
+    content: "\f00d";
+    font-size: 15px;
+    color: rgb(255 255 255 / 88%);
+    position: absolute;
+}
+
+.select-items h3 {
+    padding: 17px 16px;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    height: 64px;
+    max-width: 484px;
+    border-radius: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    background: #232323;
+}
+
+.select-items {
+    position: relative;
+    top: 9px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: #232323;
+    border: 3px solid #171717;
+    box-sizing: border-box;
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 12px rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    width: 100%;
+}
+
+.cryptobot__holder {
+    box-shadow: -6px -6px 12px rgb(255 255 255 / 2%), 6px 6px 12px rgb(0 0 0 / 16%);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 484px;
+    background-color: #171717 !important;
+    padding: 17px 16px;
+    height: 64px;
+    position: relative;
+}
+
+
+/* search */
+
 .searchbot__img {
     height: 200px;
     width: 200px;
@@ -262,7 +231,6 @@ label {
     border-radius: 16px;
     padding: 16px 12px 0px;
     overflow: hidden;
-    margin: auto;
 }
 
 .searchbot__h3 {
@@ -292,7 +260,6 @@ label {
 .searchbot__bind {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin: auto;
 }
@@ -312,10 +279,10 @@ label {
 .datasearch__section1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     max-width: 420px;
     padding: 19px 0px 0px;
+    justify-content: center;
 }
 
 .datasearch__section {
@@ -389,6 +356,46 @@ label {
 }
 
 
+/*================== login-bot ==================*/
+
+.formbot__input {
+    margin-top: 4px;
+    padding: 17px 16px;
+    width: 100%;
+    height: 64px;
+    max-width: 484px;
+    border-radius: 16px;
+    line-height: 24px;
+    background: #171717;
+    text-transform: capitalize;
+    box-shadow: -6px -6px 12px rgb(255 255 255 / 2%), 6px 6px 12px rgb(0 0 0 / 16%);
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
 /* ====================================== Media-Queries ===================================================== */
 
 @media(max-width: 992px) {
@@ -423,6 +430,7 @@ label {
 }
 
 @media(max-width: 576px) {
+    /* common css */
     .cryptobot {
         padding: 36px 15px;
     }
@@ -433,12 +441,9 @@ label {
     .crypto__headline {
         font-size: 22px;
     }
-    .cryptobot .select-items div,
-    .select-selected {
-        padding: 18px 16px;
-    }
     .botbtn {
         padding: 16px 20px;
+        max-width: 165px;
     }
     /* searchcss */
     .searchbot {
@@ -446,9 +451,6 @@ label {
     }
     .searchbot__h3 {
         font-size: 12px;
-    }
-    .botbtn {
-        max-width: 165px;
     }
     .botbtn--stop {
         max-width: 223px;
@@ -470,5 +472,12 @@ label {
     }
     .resultbot .botbtn--stop {
         padding: 18px 6px;
+    }
+    .resultbot__text {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        max-width: 240px;
+        text-overflow: ellipsis;
     }
 }
